@@ -1,6 +1,8 @@
-# @liccampanavd/vd-multiselect
+# vd-multiselect
 
 > React MultiSelect Component
+
+> [Demo](https://liccampanavd.github.io/vd-multiselect/)
 
 [![NPM](https://img.shields.io/npm/v/@liccampanavd/vd-multiselect.svg)](https://www.npmjs.com/package/@liccampanavd/vd-multiselect) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
