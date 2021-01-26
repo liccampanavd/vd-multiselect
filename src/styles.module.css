@@ -19,11 +19,12 @@
   flex-direction: column;
   color: #424242;
   margin-bottom: 4px;
+  margin-left: 2px;
 }
 
 .header span:first-child {
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .header span {
@@ -42,6 +43,8 @@
   border-top-right-radius: 4px;
   transition: all 0.5s;
   justify-content: flex-end;
+  min-height: 28px;
+  box-sizing: content-box;
 }
 
 .actionContainer input,
@@ -54,8 +57,8 @@
 
 .actionContainer input {
   flex: 1 1 auto;
-  margin: 1px;
   min-height: 24px;
+  margin-bottom: 1px;
 }
 
 .actionContainer button {

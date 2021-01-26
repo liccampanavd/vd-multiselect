@@ -6,9 +6,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.settingBox {
+  display: flex;
+  flex-direction: column;
+  background-color: #ededed;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.settingBox label:first-child {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.settingBox input,
+.settingBox select {
+  outline: none;
+  margin: 5px;
+  max-width: 250px;
+  padding: 5px;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.settingBox a {
+  font-size: 0.8rem;
 }

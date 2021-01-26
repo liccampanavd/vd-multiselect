@@ -218,7 +218,7 @@ export const MultiSelect = ({
       <div className={styles.header}>
         <span>{title}</span>
         {displayInfo &&
-          (value.length > 0 ? (
+          (value.length > 0 && selectionMode !== 'single' ? (
             <span>
               {value.length} of {store.length} {texts.selectedItems}
             </span>
@@ -232,33 +232,45 @@ export const MultiSelect = ({
             </span>
           ))}
       </div>
-      <div className={styles.actionContainer}>
-        {searchEnabled && (
-          <input
-            placeholder={texts.search}
-            onChange={handlerSearch}
-            value={searchValue}
-          />
-        )}
-        {clearEnabled && value.length > 0 && selectionMode === 'multiple' && (
-          <button className={styles.clearButton} onClick={handleClear}>
-            {texts.clear}
-          </button>
-        )}
-        {selectAllEnabled && selectionMode === 'multiple' && (
-          <button className={styles.selectAllButton} onClick={handleSelectAll}>
-            {searchValue !== ''
-              ? diference(storeFilter, value, valueKey, disabledItems, store) ||
-                storeFilter.length === 0
+      {((searchEnabled && selectionMode === 'single') ||
+        ((searchEnabled || clearEnabled || selectAllEnabled) &&
+          selectionMode === 'multiple')) && (
+        <div className={styles.actionContainer}>
+          {searchEnabled && (
+            <input
+              placeholder={texts.search}
+              onChange={handlerSearch}
+              value={searchValue}
+            />
+          )}
+          {clearEnabled && value.length > 0 && selectionMode === 'multiple' && (
+            <button className={styles.clearButton} onClick={handleClear}>
+              {texts.clear}
+            </button>
+          )}
+          {selectAllEnabled && selectionMode === 'multiple' && (
+            <button
+              className={styles.selectAllButton}
+              onClick={handleSelectAll}
+            >
+              {searchValue !== ''
+                ? diference(
+                    storeFilter,
+                    value,
+                    valueKey,
+                    disabledItems,
+                    store
+                  ) || storeFilter.length === 0
+                  ? texts.selectAll
+                  : texts.deselectAll
+                : diference(store, value, valueKey, disabledItems) ||
+                  store.length === 0
                 ? texts.selectAll
-                : texts.deselectAll
-              : diference(store, value, valueKey, disabledItems) ||
-                store.length === 0
-              ? texts.selectAll
-              : texts.deselectAll}
-          </button>
-        )}
-      </div>
+                : texts.deselectAll}
+            </button>
+          )}
+        </div>
+      )}
       <div className={styles.selectionContainer}>
         {loading ? (
           <div className={styles.loader} />

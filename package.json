@@ -1,6 +1,6 @@
 {
   "name": "@liccampanavd/vd-multiselect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React component which provides multi select functionality",
   "author": "liccampanavd",
   "license": "MIT",
