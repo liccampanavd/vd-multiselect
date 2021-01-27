@@ -11,6 +11,15 @@
   "engines": {
     "node": ">=10"
   },
+  "keywords": [
+    "react",
+    "select",
+    "multiselect",
+    "react-multiselect",
+    "react-component",
+    "form",
+    "ui"
+  ],
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
